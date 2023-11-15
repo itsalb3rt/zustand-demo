@@ -1,4 +1,4 @@
-import useCartStore from '../store/useCartStore';
+import useCartStore from '../../store/useCartStore';
 
 const Product = ({ product, isOnCart }) => {
   const { addToCart } = useCartStore();
