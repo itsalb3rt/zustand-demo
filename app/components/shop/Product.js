@@ -2,6 +2,7 @@ import useCartStore from '../../store/useCartStore';
 
 const Product = ({ product, isOnCart }) => {
   const { addToCart } = useCartStore();
+
   return (
     <div className="flex justify-between items-center mb-2">
       <div>
@@ -14,7 +15,7 @@ const Product = ({ product, isOnCart }) => {
       <div className="text-right mx-4">
         <input
           disabled={isOnCart}
-          className={`border border-gray-500 rounded w-14 text-center ${
+          className={`border border-gray-500 rounded w-14 h-10 text-center ${
             isOnCart ? 'bg-gray-200' : ''
           }`}
           type="number"
