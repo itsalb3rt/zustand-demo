@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "price": 1.99,
+    "quantity": 1,
+    "emoji": "🍎"
+  },
+  {
+    "id": 2,
+    "name": "Chicken",
+    "price": 5.99,
+    "quantity": 1,
+    "emoji": "🍗"
+  },
+  {
+    "id": 3,
+    "name": "Water",
+    "price": 0.99,
+    "quantity": 1,
+    "emoji": "🍶"
+  }
+]
