@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import useCartStore from '../store/useCartStore';
 import products from '../products.json';
+import Product from '../components/Product';
 
 const ShopPage = () => {
   const { cart, addToCart, removeFromCart, checkout } = useCartStore();
@@ -32,7 +33,7 @@ const ShopPage = () => {
 
   return (
     <div className="flex flex-col md:flex-row justify-center">
-      <div className="md:w-1/4 p-4">
+      <div className="md:w-96 p-4">
         <h1 className="text-2xl font-bold mb-4">🏬 Products</h1>
         <ul>
           {products.map((product) => (
@@ -40,38 +41,7 @@ const ShopPage = () => {
               key={product.id}
               className="flex justify-between items-center mb-2"
             >
-              <div>
-                <h2 className="text-lg font-bold">
-                  {product.emoji}
-                  {product.name}
-                </h2>
-                <p className="text-gray-500">${product.price.toFixed(2)}</p>
-              </div>
-              <div className="text-right">
-                <input
-                  disabled={isOnCart(product)}
-                  className={`border border-gray-500 rounded w-12 text-center ${
-                    isOnCart(product) ? 'bg-gray-200' : ''
-                  }`}
-                  type="number"
-                  min="1"
-                  defaultValue="1"
-                  onChange={(event) => {
-                    product.quantity = Number(event.target.value);
-                  }}
-                />
-              </div>
-              <button
-                className={`bg-${
-                  isOnCart(product) ? 'gray' : 'blue'
-                }-500 hover:bg-${
-                  isOnCart(product) ? 'gray' : 'blue '
-                }-700 text-white font-bold py-2 px-4 rounded`}
-                disabled={isOnCart(product)}
-                onClick={() => addToCart(product)}
-              >
-                {isOnCart(product) ? 'In Cart' : 'Add to Cart'}
-              </button>
+              <Product product={product} isOnCart={isOnCart(product)} />
             </li>
           ))}
         </ul>
