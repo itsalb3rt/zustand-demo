@@ -7,3 +7,15 @@
 - How to use
 - Separate store and share effects
 - Shop demo
+
+# Get started
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+Now you can access to the `http://localhost:3000` to enter to the shop demo `http://localhost:3000/shop`
